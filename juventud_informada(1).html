@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juventud Informada: orientación clara y respetuosa para adolescentes sobre prevención del embarazo, salud sexual, consentimiento y apoyo.">
+  <title>Juventud Informada | Tu salud, tus decisiones, tu futuro</title>
+  <style>
+    :root{
+      --wine:#8f2432; --wine-dark:#641a28; --red:#b43a46;
+      --cream:#fff7ed; --peach:#f7dfd3; --pink:#f5e5e4;
+      --ink:#30252a; --muted:#65575b; --white:#fff;
+      --shadow:0 12px 30px rgba(83,27,39,.10);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:var(--wine);font-weight:650}
+    button{font:inherit}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(100,26,40,.97);color:white;box-shadow:0 3px 16px #32101b25}
+    .navwrap{max-width:1160px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none;font-weight:850;letter-spacing:.2px}
+    .brandmark{width:42px;height:42px;border-radius:14px;background:#fff1e4;color:var(--wine);display:grid;place-items:center;font-size:23px}
+    .brand small{display:block;font-weight:500;opacity:.82;font-size:11px;letter-spacing:.5px}
+    nav{display:flex;align-items:center;gap:17px;flex-wrap:wrap}
+    nav a{color:#fff;text-decoration:none;font-size:14px;font-weight:650}
+    nav a:hover,nav a:focus{text-decoration:underline}
+    .menu-btn{display:none;border:1px solid #ffffff66;color:white;background:transparent;border-radius:10px;padding:7px 11px}
+    .hero{background:linear-gradient(115deg,#f8d9cc 0%,#fff0e5 55%,#f2c7c1 100%);overflow:hidden}
+    .hero-inner{max-width:1160px;margin:auto;padding:65px 24px 58px;display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:center}
+    .eyebrow{display:inline-block;background:#ffffffb8;color:var(--wine);border:1px solid #a83c4a33;border-radius:99px;padding:6px 13px;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.02;letter-spacing:-2px;color:var(--wine-dark);margin:18px 0}
+    .hero p{font-size:19px;max-width:600px;color:#543c42}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .btn{border:0;border-radius:999px;padding:12px 20px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:.2s}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:var(--wine);color:white}
+    .secondary{background:white;color:var(--wine);border:1px solid #8f243244}
+    .hero-art{min-height:290px;border-radius:32px;background:linear-gradient(145deg,#a82f40,#6f1d2c);position:relative;display:grid;place-items:center;box-shadow:var(--shadow);overflow:hidden}
+    .hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff30;border-radius:50%}
+    .hero-art:before{width:310px;height:310px;right:-65px;top:-100px}
+    .hero-art:after{width:220px;height:220px;left:-70px;bottom:-100px}
+    .people{display:flex;align-items:end;gap:20px;z-index:1}
+    .person{width:130px;height:205px;border-radius:70px 70px 24px 24px;background:#f9e5d4;position:relative;display:flex;justify-content:center;align-items:flex-start;padding-top:18px;box-shadow:inset 0 -70px #e9b8a7}
+    .person:before{content:"";width:74px;height:74px;border-radius:50%;background:#d99570;position:absolute;top:20px;box-shadow:inset 0 9px #493039}
+    .person:after{content:"";position:absolute;top:99px;width:100%;height:106px;border-radius:30px 30px 20px 20px;background:#f4e9df}
+    .person.boy{background:#f0c7ae;box-shadow:inset 0 -70px #c65a60}
+    .person.boy:before{background:#b97855;box-shadow:inset 0 10px #38252c}
+    .person.boy:after{background:#8f2432}
+    .hero-note{position:absolute;bottom:18px;left:18px;right:18px;text-align:center;color:#fff;font-size:13px;font-weight:700;z-index:2}
+    .section{max-width:1160px;margin:auto;padding:62px 24px}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 30px}
+    .section-head h2{font-size:clamp(27px,4vw,39px);color:var(--wine-dark);line-height:1.15;margin:10px 0}
+    .section-head p{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border:1px solid #8f24321a;border-radius:var(--radius);padding:23px;box-shadow:var(--shadow)}
+    .card .icon{width:48px;height:48px;border-radius:15px;background:var(--pink);display:grid;place-items:center;font-size:24px;margin-bottom:13px}
+    .card h3{color:var(--wine);margin:5px 0 8px;font-size:20px}
+    .card p{margin:0;color:#594d51}
+    .soft{background:#f8e8e0}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+    .panel{background:white;border-radius:var(--radius);padding:27px;box-shadow:var(--shadow);border:1px solid #8f24321a}
+    .panel h3{color:var(--wine-dark);margin-top:0}
+    .checklist{padding:0;list-style:none;margin:12px 0 0}
+    .checklist li{padding:9px 0 9px 31px;position:relative;border-bottom:1px solid #eee3df}
+    .checklist li:last-child{border:0}
+    .checklist li:before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:50%;background:#f5e1df;color:var(--wine);font-weight:900;text-align:center;line-height:22px}
+    .notice{background:#fff3df;border-left:5px solid #c47b36;border-radius:13px;padding:17px 19px;color:#543c2d}
+    .method-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .method{background:white;border-radius:18px;padding:20px;border:1px solid #8f24321e}
+    .method h3{margin:0 0 7px;color:var(--wine)}
+    .method p{margin:0;color:#5c5054}
+    .tag{display:inline-block;background:#f7e3df;color:var(--wine);font-size:11px;font-weight:800;padding:4px 9px;border-radius:99px;margin-bottom:9px}
+    .accordion{max-width:850px;margin:0 auto}
+    details{background:white;border:1px solid #8f24321e;border-radius:14px;margin:10px 0;padding:0 18px;box-shadow:0 5px 15px #4c1a2410}
+    summary{cursor:pointer;list-style:none;padding:17px 30px 17px 0;font-weight:800;color:var(--wine-dark);position:relative}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"＋";position:absolute;right:0;font-size:22px;top:10px;color:var(--wine)}
+    details[open] summary:after{content:"−"}
+    details p{margin:0;padding:0 0 18px;color:#594d51}
+    .quiz{max-width:780px;margin:auto;background:white;padding:26px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .question{padding:17px 0;border-bottom:1px solid #eee}
+    .question:last-of-type{border:0}
+    .question strong{display:block;margin-bottom:10px}
+    .question label{display:block;padding:6px 0;cursor:pointer}
+    .quiz-result{display:none;margin-top:18px;padding:16px;border-radius:13px;background:#f7e8e2;color:var(--wine-dark);font-weight:700}
+    .help{background:linear-gradient(120deg,#77202e,#a93242);color:white}
+    .help .section-head h2,.help .section-head p{color:white}
+    .helpbox{max-width:850px;margin:auto;background:#fff;color:var(--ink);border-radius:22px;padding:27px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .phone{font-size:30px;font-weight:900;color:var(--wine)}
+    .helpbox a{display:inline-block;margin:5px 0}
+    footer{background:#511724;color:#fbeee7;text-align:center;padding:27px 20px;font-size:13px}
+    footer a{color:#ffe0d2}
+    .smallprint{font-size:12px;color:#786a6e}
+    @media(max-width:800px){
+      .navwrap{align-items:flex-start}.menu-btn{display:block}
+      nav{display:none;position:absolute;left:0;right:0;top:65px;background:var(--wine-dark);padding:16px 22px;flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}
+      .hero-inner{grid-template-columns:1fr;padding-top:45px}
+      .hero-art{min-height:240px}
+      .grid{grid-template-columns:1fr 1fr}
+      .two-col,.helpbox{grid-template-columns:1fr}
+    }
+    @media(max-width:540px){
+      .grid,.method-grid{grid-template-columns:1fr}
+      .section{padding:45px 17px}
+      .hero-inner{padding-left:18px;padding-right:18px}
+      .person{width:105px;height:175px}
+      .person:before{width:62px;height:62px}
+      .person:after{top:88px}
+      h1{letter-spacing:-1.3px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="navwrap">
+      <a class="brand" href="#inicio">
+        <span class="brandmark">♡</span>
+        <span>JUVENTUD INFORMADA<small>Decide hoy, vive mejor</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰ Menú</button>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <label for="languageSelect" style="font-size:12px;font-weight:700">Idioma:</label>
+        <select id="languageSelect" aria-label="Seleccionar idioma" style="border:1px solid #ffffff77;border-radius:9px;padding:7px;background:#fff7ed;color:#641a28;font-weight:700">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+        <div id="google_translate_element" style="position:absolute;left:-9999px"></div>
+      </div>
+      <nav id="mainNav">
+        <a href="#inicio">Inicio</a><a href="#informate">Infórmate</a><a href="#chicosychicas">Para ambos</a>
+        <a href="#prevencion">Prevención</a><a href="#preguntas">Preguntas</a><a href="#orientacion">Orientación</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Información · Respeto · Prevención</span>
+          <h1>Tu futuro también merece cuidado.</h1>
+          <p>El embarazo en la adolescencia es un tema que nos involucra a todos. Infórmate, conversa sin miedo y toma decisiones libres y responsables.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#informate">Comenzar a informarme →</a>
+            <a class="btn secondary" href="#orientacion">Necesito orientación</a>
+          </div>
+        </div>
+        <div class="hero-art" role="img" aria-label="Ilustración simbólica de dos adolescentes reflexionando sobre su futuro">
+          <div class="people"><div class="person boy"></div><div class="person"></div></div>
+          <div class="hero-note">La responsabilidad, el respeto y la prevención son de todas las personas.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="informate">
+      <div class="section-head">
+        <span class="eyebrow">01 · Conocer es prevenir</span>
+        <h2>¿Qué es el embarazo en la adolescencia?</h2>
+        <p>Es el embarazo que ocurre en una persona durante la etapa adolescente. Puede influir en su salud, sus estudios, sus relaciones y sus planes de vida. Cada situación necesita información y apoyo, nunca burlas ni discriminación.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">📚</div><h3>Educación</h3><p>Contar con información clara ayuda a reconocer riesgos, resolver dudas y tomar decisiones conscientes.</p></article>
+        <article class="card"><div class="icon">🤝</div><h3>Responsabilidad compartida</h3><p>La prevención no es tarea de una sola persona. Los chicos también deben informarse, cuidarse y respetar.</p></article>
+        <article class="card"><div class="icon">🌱</div><h3>Proyecto de vida</h3><p>Los adolescentes tienen derecho a estudiar, crecer, plantearse metas y recibir apoyo para alcanzarlas.</p></article>
+      </div>
+    </section>
+
+    <section class="section soft" id="chicosychicas">
+      <div class="section-head">
+        <span class="eyebrow">02 · Orientación para todos</span>
+        <h2>La responsabilidad es de dos</h2>
+        <p>La salud sexual y reproductiva requiere diálogo, respeto, consentimiento y decisiones compartidas.</p>
+      </div>
+      <div class="two-col">
+        <article class="panel">
+          <h3>👦 Para los varones</h3>
+          <ul class="checklist">
+            <li>Infórmate sobre prevención del embarazo y las ITS.</li>
+            <li>Participa activamente en el cuidado y no dejes toda la responsabilidad a tu pareja.</li>
+            <li>Respeta los límites y decisiones de la otra persona.</li>
+            <li>No presiones, manipules ni difundas información privada.</li>
+            <li>Busca orientación en un servicio de salud si tienes dudas.</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <h3>👧 Para las mujeres</h3>
+          <ul class="checklist">
+            <li>Conoce tus derechos y busca información confiable sobre tu salud.</li>
+            <li>Puedes decir que no; nadie debe presionarte.</li>
+            <li>Consulta con personal de salud sobre métodos anticonceptivos.</li>
+            <li>Pregunta y expresa tus dudas sin sentir vergüenza.</li>
+            <li>Busca apoyo de una persona adulta de confianza o profesional.</li>
+          </ul>
+        </article>
+      </div>
+      <p class="smallprint" style="text-align:center;margin-top:18px">Estas orientaciones son útiles para todas las personas, independientemente de su género.</p>
+    </section>
+
+    <section class="section" id="prevencion">
+      <div class="section-head">
+        <span class="eyebrow">03 · Cuidarse es importante</span>
+        <h2>¿Cómo prevenir un embarazo no planificado?</h2>
+        <p>La decisión de tener o no relaciones sexuales debe ser libre, informada y sin presiones. No tener relaciones sexuales también es una decisión válida.</p>
+      </div>
+      <div class="method-grid">
+        <article class="method"><span class="tag">Doble protección</span><h3>Preservativo o condón</h3><p>Usado correctamente en cada relación sexual, ayuda a prevenir el embarazo y reduce el riesgo de infecciones de transmisión sexual (ITS), incluido el VIH.</p></article>
+        <article class="method"><span class="tag">Otros métodos</span><h3>Pastillas, implante e DIU</h3><p>Existen métodos hormonales y dispositivos intrauterinos. Un profesional de salud puede explicar su uso, beneficios, posibles efectos y cuál se adapta a cada persona.</p></article>
+        <article class="method"><span class="tag">Información importante</span><h3>Anticoncepción de emergencia</h3><p>Puede ayudar a prevenir un embarazo después de una relación sexual sin protección o ante un fallo del método. Se debe buscar orientación de salud cuanto antes.</p></article>
+        <article class="method"><span class="tag">Recuerda</span><h3>Ningún método se elige por presión</h3><p>La elección debe ser informada y voluntaria. No uses remedios caseros ni consejos de redes sociales para evitar un embarazo.</p></article>
+      </div>
+      <div class="notice" style="margin-top:20px"><strong>Importante:</strong> Los métodos anticonceptivos no protegen todos de las ITS. El preservativo es el método que ayuda a reducir tanto el riesgo de embarazo como el de muchas ITS. Para elegir un método, consulta a un profesional de salud.</div>
+    </section>
+
+    <section class="section soft">
+      <div class="section-head">
+        <span class="eyebrow">04 · Relaciones saludables</span>
+        <h2>Consentimiento y respeto</h2>
+        <p>Una relación sana se construye con libertad, confianza y comunicación.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">💬</div><h3>Hablar</h3><p>Conversar sobre límites, dudas y prevención sin burlas ni amenazas.</p></article>
+        <article class="card"><div class="icon">🛑</div><h3>Respetar el “no”</h3><p>Nadie debe insistir, chantajear o presionar para obtener una respuesta.</p></article>
+        <article class="card"><div class="icon">🧡</div><h3>Buscar apoyo</h3><p>Si hay presión, miedo o una situación que te incomoda, habla con una persona adulta de confianza o un profesional.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="preguntas">
+      <div class="section-head">
+        <span class="eyebrow">05 · Resolvemos dudas</span>
+        <h2>Preguntas frecuentes</h2>
+        <p>Abre cada pregunta para leer una respuesta breve.</p>
+      </div>
+      <div class="accordion">
+        <details><summary>¿La prevención es responsabilidad solo de la mujer?</summary><p>No. La prevención es responsabilidad compartida. Los varones también deben informarse, participar en el cuidado, respetar los límites y asumir las consecuencias de sus decisiones.</p></details>
+        <details><summary>¿El condón también ayuda a prevenir infecciones?</summary><p>Sí. El uso correcto y constante del preservativo reduce el riesgo de embarazo y de muchas infecciones de transmisión sexual, incluido el VIH. No elimina por completo todos los riesgos.</p></details>
+        <details><summary>¿Puedo pedir orientación si soy adolescente?</summary><p>Sí. En Perú, el Ministerio de Salud informa que adolescentes pueden recibir consejería sobre salud sexual y reproductiva y orientación sobre métodos anticonceptivos en establecimientos de salud.</p></details>
+        <details><summary>¿Qué hago si creo que podría haber un embarazo?</summary><p>No enfrentes la preocupación a solas ni te guíes por rumores. Acude a un establecimiento de salud para recibir orientación y preguntar por una prueba de embarazo. Si puedes, busca apoyo de una persona adulta de confianza.</p></details>
+        <details><summary>¿Y si mi pareja me presiona?</summary><p>Tienes derecho a decir que no. El consentimiento debe ser libre y puede retirarse en cualquier momento. Si no te sientes seguro o segura, busca ayuda de una persona adulta de confianza o de un servicio profesional.</p></details>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="section-head">
+        <span class="eyebrow">06 · Comprueba lo aprendido</span>
+        <h2>Mini cuestionario</h2>
+        <p>Responde estas preguntas para repasar. No se guardan tus respuestas.</p>
+      </div>
+      <form class="quiz" id="quizForm">
+        <div class="question">
+          <strong>1. ¿Quiénes comparten la responsabilidad de prevenir un embarazo?</strong>
+          <label><input type="radio" name="q1" value="a"> Solo la mujer</label>
+          <label><input type="radio" name="q1" value="b"> Ambas personas</label>
+          <label><input type="radio" name="q1" value="c"> Solo el varón</label>
+        </div>
+        <div class="question">
+          <strong>2. ¿Qué método ayuda a prevenir el embarazo y reduce el riesgo de ITS?</strong>
+          <label><input type="radio" name="q2" value="a"> El preservativo</label>
+          <label><input type="radio" name="q2" value="b"> Un remedio casero</label>
+          <label><input type="radio" name="q2" value="c"> Ninguno</label>
+        </div>
+        <div class="question">
+          <strong>3. ¿Qué debes hacer si tienes dudas sobre anticoncepción?</strong>
+          <label><input type="radio" name="q3" value="a"> Seguir cualquier consejo de redes</label>
+          <label><input type="radio" name="q3" value="b"> Evitar preguntar</label>
+          <label><input type="radio" name="q3" value="c"> Consultar a un profesional de salud</label>
+        </div>
+        <div class="question">
+          <strong>4. ¿Qué significa el consentimiento?</strong>
+          <label><input type="radio" name="q4" value="a"> Aceptar por miedo a perder a alguien</label>
+          <label><input type="radio" name="q4" value="b"> Decidir libremente, sin presión</label>
+          <label><input type="radio" name="q4" value="c"> No poder cambiar de opinión</label>
+        </div>
+        <button class="btn primary" type="submit">Ver mis resultados</button>
+        <div class="quiz-result" id="quizResult" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="section help" id="orientacion">
+      <div class="section-head">
+        <span class="eyebrow" style="background:#ffffff20;color:white;border-color:#ffffff55">07 · No estás solo/a</span>
+        <h2>¿Necesitas orientación?</h2>
+        <p>Puedes hacer preguntas y recibir información profesional, gratuita y confidencial en los servicios del Ministerio de Salud del Perú.</p>
+      </div>
+      <div class="helpbox">
+        <div>
+          <h3>Ministerio de Salud – Línea 113</h3>
+          <div class="phone">113 · opción 3</div>
+          <p>Orientación en salud sexual y reproductiva. Atención telefónica gratuita, las 24 horas, todos los días.</p>
+          <a href="https://www.gob.pe/74520-prevencion-del-embarazo-en-la-adolescencia" target="_blank" rel="noopener">Información oficial sobre prevención ↗</a>
+        </div>
+        <div>
+          <h3>También puedes consultar</h3>
+          <p><strong>WhatsApp o Telegram:</strong><br>955 557 000 / 952 842 623</p>
+          <p><strong>Correo:</strong><br>infosalud@minsa.gob.pe</p>
+          <a href="https://www.gob.pe/15121-derechos-sexuales-y-reproductivos-en-la-anticoncepcion-en-la-adolescencia" target="_blank" rel="noopener">Derechos y orientación para adolescentes ↗</a>
+        </div>
+        <div style="grid-column:1/-1;border-top:1px solid #eadbd7;padding-top:18px">
+          <h3>🌐 Aldeas Infantiles SOS Perú – Programa Cusco</h3>
+          <p>Si necesitas orientación o deseas conocer sus programas, consulta sus canales institucionales oficiales.</p>
+          <p><strong>Dirección:</strong> Prolongación Av. Grau N.º 24, Huancaro, distrito de Santiago, Cusco.</p>
+          <p><strong>Teléfono institucional publicado:</strong> 984 766 975</p>
+          <p><strong>Correo:</strong> <a href="mailto:ai.cusco@aldeasinfantiles.org.pe">ai.cusco@aldeasinfantiles.org.pe</a></p>
+          <p><a href="https://www.aldeasinfantiles.org.pe/quienes-somos/donde-estamos/cusco" target="_blank" rel="noopener">Visitar la página oficial del Programa Cusco ↗</a></p>
+          <p class="smallprint">Estos datos corresponden a los canales publicados por la organización. Confirma la atención y los servicios disponibles directamente con Aldeas Infantiles SOS Perú.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Un mensaje para recordar</span>
+        <h2>Infórmate, decide y construye tu futuro.</h2>
+        <p>Tu salud importa. Tus decisiones merecen respeto. Tus sueños también cuentan.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>JUVENTUD INFORMADA</strong><br>
+    Una iniciativa educativa para promover información, respeto y prevención.<br><br>
+    <span>Fuentes para ampliar: <a href="https://www.gob.pe/74520-prevencion-del-embarazo-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Prevención</a> ·
+    <a href="https://www.gob.pe/15121-derechos-sexuales-y-reproductivos-en-la-anticoncepcion-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Derechos</a> ·
+    <a href="https://www.who.int/es/news-room/fact-sheets/detail/adolescent-pregnancy" target="_blank" rel="noopener">OMS – Embarazo adolescente</a></span>
+    <p class="smallprint" style="color:#f2d8d2">Contenido educativo; no reemplaza la atención ni el consejo personalizado de un profesional de salud.</p>
+  </footer>
+
+  <script>
+    // El contenido original está en español. La traducción automática requiere internet.
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    const languageSelect = document.getElementById('languageSelect');
+    languageSelect.addEventListener('change', () => {
+      const target = languageSelect.value;
+      const trySelectLanguage = () => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = target;
+          combo.dispatchEvent(new Event('change'));
+        } else {
+          setTimeout(trySelectLanguage, 350);
+        }
+      };
+      trySelectLanguage();
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    menuBtn.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    document.getElementById('quizForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const answers = {q1:'b', q2:'a', q3:'c', q4:'b'};
+      let score = 0;
+      let answered = 0;
+      Object.entries(answers).forEach(([question, correct]) => {
+        const chosen = document.querySelector(`input[name="${question}"]:checked`);
+        if (chosen) {
+          answered++;
+          if (chosen.value === correct) score++;
+        }
+      });
+      const result = document.getElementById('quizResult');
+      result.style.display = 'block';
+      if (answered < 4) {
+        result.textContent = `Has respondido ${answered} de 4 preguntas. Completa las que faltan para ver tu resultado.`;
+      } else {
+        result.textContent = `¡Obtuviste ${score} de 4 respuestas correctas! ${score === 4 ? '¡Excelente! Sigue compartiendo información confiable.' : 'Repasa las secciones y vuelve a intentarlo. ¡Aprender también es avanzar!'}`;
+      }
+    });
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
