@@ -274,4 +274,116 @@
           <label><input type="radio" name="q4" value="c"> No poder cambiar de opinión</label>
         </div>
         <button class="btn primary" type="submit">Ver mis resultados</button>
-        <div class="quiz-result
+        <div class="quiz-result" id="quizResult" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section class="section help" id="orientacion">
+      <div class="section-head">
+        <span class="eyebrow" style="background:#ffffff20;color:white;border-color:#ffffff55">07 · No estás solo/a</span>
+        <h2>¿Necesitas orientación?</h2>
+        <p>Puedes hacer preguntas y recibir información profesional, gratuita y confidencial en los servicios del Ministerio de Salud del Perú.</p>
+      </div>
+      <div class="helpbox">
+        <div>
+          <h3>Ministerio de Salud – Línea 113</h3>
+          <div class="phone">113 · opción 3</div>
+          <p>Orientación en salud sexual y reproductiva. Atención telefónica gratuita, las 24 horas, todos los días.</p>
+          <a href="https://www.gob.pe/74520-prevencion-del-embarazo-en-la-adolescencia" target="_blank" rel="noopener">Información oficial sobre prevención ↗</a>
+        </div>
+        <div>
+          <h3>También puedes consultar</h3>
+          <p><strong>WhatsApp o Telegram:</strong><br>955 557 000 / 952 842 623</p>
+          <p><strong>Correo:</strong><br>infosalud@minsa.gob.pe</p>
+          <a href="https://www.gob.pe/15121-derechos-sexuales-y-reproductivos-en-la-anticoncepcion-en-la-adolescencia" target="_blank" rel="noopener">Derechos y orientación para adolescentes ↗</a>
+        </div>
+        <div style="grid-column:1/-1;border-top:1px solid #eadbd7;padding-top:18px">
+          <h3>🌐 Aldeas Infantiles SOS Perú – Programa Cusco</h3>
+          <p>Si necesitas orientación o deseas conocer sus programas, consulta sus canales institucionales oficiales.</p>
+          <p><strong>Dirección:</strong> Prolongación Av. Grau N.º 24, Huancaro, distrito de Santiago, Cusco.</p>
+          <p><strong>Teléfono institucional publicado:</strong> 984 766 975</p>
+          <p><strong>Correo:</strong> <a href="mailto:ai.cusco@aldeasinfantiles.org.pe">ai.cusco@aldeasinfantiles.org.pe</a></p>
+          <p><a href="https://www.aldeasinfantiles.org.pe/quienes-somos/donde-estamos/cusco" target="_blank" rel="noopener">Visitar la página oficial del Programa Cusco ↗</a></p>
+          <p class="smallprint">Estos datos corresponden a los canales publicados por la organización. Confirma la atención y los servicios disponibles directamente con Aldeas Infantiles SOS Perú.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <span class="eyebrow">Un mensaje para recordar</span>
+        <h2>Infórmate, decide y construye tu futuro.</h2>
+        <p>Tu salud importa. Tus decisiones merecen respeto. Tus sueños también cuentan.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>JUVENTUD INFORMADA</strong><br>
+    Una iniciativa educativa para promover información, respeto y prevención.<br><br>
+    <span>Fuentes para ampliar: <a href="https://www.gob.pe/74520-prevencion-del-embarazo-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Prevención</a> ·
+    <a href="https://www.gob.pe/15121-derechos-sexuales-y-reproductivos-en-la-anticoncepcion-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Derechos</a> ·
+    <a href="https://www.who.int/es/news-room/fact-sheets/detail/adolescent-pregnancy" target="_blank" rel="noopener">OMS – Embarazo adolescente</a></span>
+    <p class="smallprint" style="color:#f2d8d2">Contenido educativo; no reemplaza la atención ni el consejo personalizado de un profesional de salud.</p>
+  </footer>
+
+  <script>
+    // El contenido original está en español. La traducción automática requiere internet.
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        includedLanguages: 'es,en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    const languageSelect = document.getElementById('languageSelect');
+    languageSelect.addEventListener('change', () => {
+      const target = languageSelect.value;
+      const trySelectLanguage = () => {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = target;
+          combo.dispatchEvent(new Event('change'));
+        } else {
+          setTimeout(trySelectLanguage, 350);
+        }
+      };
+      trySelectLanguage();
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    menuBtn.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    document.getElementById('quizForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const answers = {q1:'b', q2:'a', q3:'c', q4:'b'};
+      let score = 0;
+      let answered = 0;
+      Object.entries(answers).forEach(([question, correct]) => {
+        const chosen = document.querySelector(`input[name="${question}"]:checked`);
+        if (chosen) {
+          answered++;
+          if (chosen.value === correct) score++;
+        }
+      });
+      const result = document.getElementById('quizResult');
+      result.style.display = 'block';
+      if (answered < 4) {
+        result.textContent = `Has respondido ${answered} de 4 preguntas. Completa las que faltan para ver tu resultado.`;
+      } else {
+        result.textContent = `¡Obtuviste ${score} de 4 respuestas correctas! ${score === 4 ? '¡Excelente! Sigue compartiendo información confiable.' : 'Repasa las secciones y vuelve a intentarlo. ¡Aprender también es avanzar!'}`;
+      }
+    });
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
