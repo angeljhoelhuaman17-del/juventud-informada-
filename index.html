@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -94,31 +93,23 @@
     footer{background:#511724;color:#fbeee7;text-align:center;padding:27px 20px;font-size:13px}
     footer a{color:#ffe0d2}
     .smallprint{font-size:12px;color:#786a6e}
+    .feedback{max-width:850px;margin:auto;background:white;border:1px solid #8f24321a;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+    .feedback label{display:block;font-weight:750;color:var(--wine-dark);margin:12px 0 6px}
+    .feedback input,.feedback textarea{width:100%;padding:12px;border:1px solid #d9c5c5;border-radius:11px;font:inherit;background:#fffdfb;color:var(--ink)}
+    .feedback textarea{min-height:110px;resize:vertical}
+    .feedback input:focus,.feedback textarea:focus{outline:2px solid #b43a46;outline-offset:2px}
+    .comment-list{margin-top:24px;display:grid;gap:12px}
+    .comment-item{background:#fff7f3;border-left:4px solid var(--wine);padding:14px 16px;border-radius:10px}
+    .comment-item strong{color:var(--wine-dark)}
+    .comment-item p{margin:6px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
 
-    /* Sección nueva de comentarios: conserva la paleta original */
-    .comments-wrap{max-width:900px;margin:auto}
-    .comments-auth,.comment-form,.comment-item,.admin-box{background:#fff;border:1px solid #8f24321e;border-radius:18px;padding:20px;box-shadow:var(--shadow);margin:14px 0}
-    .comments-auth{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-    .comments-auth p{margin:0;color:var(--muted)}
-    .comment-form label{display:block;font-weight:750;color:var(--wine-dark);margin:10px 0 5px}
-    .comment-form input,.comment-form textarea{width:100%;border:1px solid #d9c4c5;border-radius:11px;padding:12px;font:inherit;background:#fffdfb;color:var(--ink)}
-    .comment-form textarea{min-height:105px;resize:vertical}
-    .comment-form input:focus,.comment-form textarea:focus{outline:3px solid #f2c7c1;border-color:var(--wine)}
-    .comment-list{display:grid;gap:12px}
-    .comment-item{margin:0;box-shadow:none}
-    .comment-item h3{margin:0 0 4px;color:var(--wine)}
-    .comment-item p{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
-    .comment-date{font-size:12px;color:var(--muted);margin-top:9px}
-    .admin-box{border:2px solid #8f243244}
-    .admin-box h3{color:var(--wine-dark);margin-top:0}
-    .admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .btn-small{border:0;border-radius:999px;padding:8px 13px;font-weight:750;cursor:pointer}
-    .btn-approve{background:#e1f2e5;color:#205b32}
-    .btn-reject{background:#fff0df;color:#875018}
-    .btn-delete{background:#f9e1e2;color:#8b1e2b}
-    .status-note{padding:12px 14px;border-radius:12px;background:#f7e8e2;color:var(--wine-dark);margin:12px 0}
-    .hidden{display:none!important}
-    @media(max-width:540px){.comments-auth{align-items:stretch}.comments-auth .btn{width:100%}}
+    .auth-panel{max-width:850px;margin:0 auto 18px;background:#fff;border:1px solid #8f24321a;border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    .auth-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .google-btn{border:1px solid #d7caca;background:#fff;color:#30252a;border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer}
+    .google-btn:hover{background:#fff7f3}
+    .admin-panel{max-width:850px;margin:18px auto 0;background:#fff;border:2px solid #8f2432;border-radius:18px;padding:20px}
+    .admin-comment{padding:14px;border:1px solid #eadbd7;border-radius:12px;margin:10px 0}
+    .admin-comment button{margin:8px 8px 0 0}
 
     @media(max-width:800px){
       .navwrap{align-items:flex-start}.menu-btn{display:block}
@@ -158,7 +149,7 @@
       </div>
       <nav id="mainNav">
         <a href="#inicio">Inicio</a><a href="#informate">Infórmate</a><a href="#chicosychicas">Para ambos</a>
-        <a href="#prevencion">Prevención</a><a href="#preguntas">Preguntas</a><a href="#comentarios">Comentarios</a><a href="#orientacion">Orientación</a>
+        <a href="#prevencion">Prevención</a><a href="#preguntas">Preguntas</a><a href="#orientacion">Orientación</a><a href="#comentarios">Comentarios</a>
       </nav>
     </div>
   </header>
@@ -181,11 +172,7 @@
         </div>
       </div>
     </section>
-    
-      </div>
-    </section>
-
-    <section class="section" id="informate">
+        <section class="section" id="informate">
       <div class="section-head">
         <span class="eyebrow">01 · Conocer es prevenir</span>
         <h2>¿Qué es el embarazo en la adolescencia?</h2>
@@ -237,7 +224,7 @@
       </div>
       <div class="method-grid">
         <article class="method"><span class="tag">Doble protección</span><h3>Preservativo o condón</h3><p>Usado correctamente en cada relación sexual, ayuda a prevenir el embarazo y reduce el riesgo de infecciones de transmisión sexual (ITS), incluido el VIH.</p></article>
-        <article class="method"><span class="tag">Otros métodos</span><h3>Pastillas, implante e DIU</h3><p>Existen métodos hormonales y dispositivos intrauterinos. Un profesional de salud puede explicar su uso, beneficios, posibles efectos y cuál se adapta a cada persona.</p></article>
+        <article class="method"><span class="tag">Otros métodos</span><h3>Pastillas, implante y DIU</h3><p>Existen métodos hormonales y dispositivos intrauterinos. Un profesional de salud puede explicar su uso, beneficios, posibles efectos y cuál se adapta a cada persona.</p></article>
         <article class="method"><span class="tag">Información importante</span><h3>Anticoncepción de emergencia</h3><p>Puede ayudar a prevenir un embarazo después de una relación sexual sin protección o ante un fallo del método. Se debe buscar orientación de salud cuanto antes.</p></article>
         <article class="method"><span class="tag">Recuerda</span><h3>Ningún método se elige por presión</h3><p>La elección debe ser informada y voluntaria. No uses remedios caseros ni consejos de redes sociales para evitar un embarazo.</p></article>
       </div>
@@ -307,47 +294,7 @@
         <div class="quiz-result" id="quizResult" role="status" aria-live="polite"></div>
       </form>
     </section>
-    
-    <section class="section soft" id="comentarios">
-      <div class="section-head">
-        <span class="eyebrow">06 · Tu opinión cuenta</span>
-        <h2>Comentarios y experiencias</h2>
-        <p>Comparte una opinión respetuosa o una pregunta sobre la información de esta página. Por seguridad, los comentarios se publican solo después de ser revisados.</p>
-      </div>
-      <div class="comments-wrap">
-        <div class="comments-auth">
-          <div>
-            <strong id="userStatus">No has iniciado sesión</strong>
-            <p id="userHint">Inicia sesión con Google para escribir un comentario.</p>
-          </div>
-          <div>
-            <button class="btn primary" id="googleLoginBtn" type="button">Continuar con Google</button>
-            <button class="btn secondary hidden" id="logoutBtn" type="button">Cerrar sesión</button>
-          </div>
-        </div>
-        <div id="commentsMessage" class="status-note" role="status" aria-live="polite">Los comentarios enviados quedarán pendientes hasta que el administrador los apruebe.</div>
-
-        <form class="comment-form hidden" id="commentForm">
-          <label for="commentName">Nombre para mostrar</label>
-          <input id="commentName" maxlength="40" required placeholder="Escribe tu nombre o apodo">
-          <label for="commentText">Tu comentario</label>
-          <textarea id="commentText" maxlength="500" minlength="3" required placeholder="Escribe un comentario respetuoso (máximo 500 caracteres)"></textarea>
-          <p class="smallprint">No compartas teléfonos, direcciones, contraseñas ni información privada.</p>
-          <button class="btn primary" type="submit">Enviar para revisión</button>
-        </form>
-
-        <h3 style="color:var(--wine-dark);margin:26px 0 12px">Comentarios aprobados</h3>
-        <div id="approvedComments" class="comment-list"><p class="smallprint">Cargando comentarios…</p></div>
-
-        <div id="adminPanel" class="admin-box hidden">
-          <h3>Panel de administración</h3>
-          <p>Desde aquí puedes revisar los comentarios pendientes. Solo la cuenta administradora autorizada debe poder realizar estas acciones.</p>
-          <div id="pendingComments" class="comment-list"><p class="smallprint">Cargando comentarios pendientes…</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section help" id="orientacion">
+        <section class="section help" id="orientacion">
       <div class="section-head">
         <span class="eyebrow" style="background:#ffffff20;color:white;border-color:#ffffff55">07 · No estás solo/a</span>
         <h2>¿Necesitas orientación?</h2>
@@ -378,6 +325,43 @@
       </div>
     </section>
 
+    <section class="section soft" id="comentarios">
+      <div class="section-head">
+        <span class="eyebrow">08 · Tu opinión cuenta</span>
+        <h2>¿Qué te pareció nuestra página?</h2>
+        <p>Déjanos tu comentario o sugerencia. Tu opinión nos ayuda a mejorar.</p>
+      </div>
+
+      <div class="auth-panel">
+        <h3 style="margin-top:0;color:var(--wine-dark)">Acceso de usuarios</h3>
+        <p id="authMessage" class="smallprint">Inicia sesión con Google para publicar comentarios.</p>
+        <div class="auth-actions">
+          <button class="google-btn" id="googleSignIn" type="button">G  Iniciar sesión con Google</button>
+          <button class="btn secondary" id="googleSignOut" type="button" hidden>Cerrar sesión</button>
+          <span id="signedInUser" class="smallprint"></span>
+        </div>
+      </div>
+      <form class="feedback" id="commentForm">
+        <label for="commentName">Tu nombre (opcional)</label>
+        <input id="commentName" name="name" maxlength="40" placeholder="¿Cómo te llamas?">
+        <label for="commentText">Tu comentario</label>
+        <textarea id="commentText" name="comment" maxlength="500" required placeholder="Escribe qué te pareció la página..."></textarea>
+        <p class="smallprint">No incluyas datos personales ni información privada.</p>
+        <button class="btn primary" type="submit">Enviar comentario</button>
+        <p class="smallprint" id="commentStatus" role="status" aria-live="polite"></p>
+        <div class="comment-list" id="commentList" aria-live="polite">
+          <h3>Comentarios recibidos</h3>
+          <p class="smallprint">Todavía no hay comentarios. ¡Sé el primero en compartir tu opinión!</p>
+        </div>
+      </form>
+
+      <div class="admin-panel" id="adminPanel" hidden>
+        <h3 style="margin-top:0;color:var(--wine-dark)">Panel privado de administración</h3>
+        <p class="smallprint">Desde aquí puedes aprobar o rechazar comentarios. Solo la cuenta administradora autorizada podrá gestionarlos.</p>
+        <div id="pendingComments"><p class="smallprint">Cargando comentarios pendientes…</p></div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="section-head">
         <span class="eyebrow">Un mensaje para recordar</span>
@@ -389,17 +373,21 @@
 
   <footer>
     <strong>JUVENTUD INFORMADA</strong><br>
-    Una iniciativa educativa para promover información, respeto y prevención.<br><br>
+    Una iniciativa educativa para promover información, respeto y prevención.<br>
+    <p class="smallprint" style="color:#f2d8d2">Autor: Angel Jhoel Fabricio Huaman Flores</p><br>
     <span>Fuentes para ampliar: <a href="https://www.gob.pe/74520-prevencion-del-embarazo-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Prevención</a> ·
     <a href="https://www.gob.pe/15121-derechos-sexuales-y-reproductivos-en-la-anticoncepcion-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Derechos</a> ·
     <a href="https://www.who.int/es/news-room/fact-sheets/detail/adolescent-pregnancy" target="_blank" rel="noopener">OMS – Embarazo adolescente</a></span>
+
+    <p class="smallprint" style="color:#f2d8d2">El acceso con Google y la moderación requieren activar Google Authentication, crear Firestore y configurar sus reglas de seguridad en Firebase.</p>
     <p class="smallprint" style="color:#f2d8d2">Contenido educativo; no reemplaza la atención ni el consejo personalizado de un profesional de salud.</p>
-    <p style="margin:14px 0 0;color:#ffe0d2;font-weight:700">Autor: Angel Jhoel Huaman</p>
   </footer>
-  
-  <script>
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+    import { getFirestore, collection, addDoc, query, where, onSnapshot, updateDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
     // El contenido original está en español. La traducción automática requiere internet.
-    function googleTranslateElementInit() {
+    window.googleTranslateElementInit = function() {
       new google.translate.TranslateElement({
         pageLanguage: 'es',
         includedLanguages: 'es,en',
@@ -433,6 +421,195 @@
       menuBtn.setAttribute('aria-expanded', 'false');
     }));
 
+
+    // Firebase Authentication (Google) y Firestore.
+    // Antes de publicar: activa Google en Authentication, crea Firestore
+    const firebaseConfig = {
+      apiKey: "AIzaSyD3VTjzzar-jVxeIPefuEcOIsI_PoMRM6s",
+      authDomain: "juventud-informada-ushkas.firebaseapp.com",
+      projectId: "juventud-informada-ushkas",
+      storageBucket: "juventud-informada-ushkas.firebasestorage.app",
+      messagingSenderId: "902479218251",
+      appId: "1:902479218251:web:5904df550bae2878eeefce",
+      measurementId: "G-KLQ4PMT1KF"
+    };
+    const ADMIN_EMAIL = "angeljhoelhuaman17@gmail.com".trim().toLowerCase();
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const googleProvider = new GoogleAuthProvider();
+
+    const authMessage = document.getElementById("authMessage");
+    const signInButton = document.getElementById("googleSignIn");
+    const signOutButton = document.getElementById("googleSignOut");
+    const signedInUser = document.getElementById("signedInUser");
+    const commentForm = document.getElementById("commentForm");
+    const commentList = document.getElementById("commentList");
+    const commentStatus = document.getElementById("commentStatus");
+    const adminPanel = document.getElementById("adminPanel");
+    const pendingComments = document.getElementById("pendingComments");
+
+    // En móviles usamos redirección: suele ser más fiable que abrir una ventana emergente.
+    signInButton.addEventListener("click", async () => {
+      signInButton.disabled = true;
+      authMessage.textContent = "Conectando con Google…";
+      try {
+        await signInWithRedirect(auth, googleProvider);
+      } catch (error) {
+        signInButton.disabled = false;
+        authMessage.textContent = "No se pudo iniciar sesión (" + (error.code || "error desconocido") + "). Verifica Google y los dominios autorizados en Firebase.";
+        console.error("Error al iniciar sesión:", error.code, error.message);
+      }
+    });
+
+    // Recupera el resultado cuando Google devuelve al usuario a esta página.
+    getRedirectResult(auth).catch(error => {
+      authMessage.textContent = "No se pudo completar el acceso (" + (error.code || "error desconocido") + "). Revisa la configuración de Firebase.";
+      console.error("Error al regresar de Google:", error.code, error.message);
+    });
+
+    signOutButton.addEventListener("click", async () => {
+      try { await signOut(auth); }
+      catch (error) { authMessage.textContent = "No se pudo cerrar la sesión."; }
+    });
+
+    function safeText(value) {
+      return typeof value === "string" ? value : "";
+    }
+
+    function showApprovedComments(snapshot) {
+      commentList.innerHTML = "<h3>Comentarios aprobados</h3>";
+      if (snapshot.empty) {
+        const empty = document.createElement("p");
+        empty.className = "smallprint";
+        empty.textContent = "Todavía no hay comentarios aprobados. ¡Puedes ser el primero en compartir tu opinión!";
+        commentList.appendChild(empty);
+        return;
+      }
+      snapshot.forEach(docSnap => {
+        const item = docSnap.data();
+        const article = document.createElement("article");
+        article.className = "comment-item";
+        const author = document.createElement("strong");
+        author.textContent = safeText(item.name) || "Usuario";
+        const message = document.createElement("p");
+        message.textContent = safeText(item.comment);
+        article.append(author, message);
+        commentList.appendChild(article);
+      });
+    }
+
+    let stopApprovedListener = null;
+    let stopPendingListener = null;
+
+    function showPendingComments(snapshot) {
+      pendingComments.innerHTML = "";
+      if (snapshot.empty) {
+        pendingComments.innerHTML = '<p class="smallprint">No hay comentarios pendientes.</p>';
+        return;
+      }
+      snapshot.forEach(docSnap => {
+        const item = docSnap.data();
+        const card = document.createElement("article");
+        card.className = "admin-comment";
+        const author = document.createElement("strong");
+        author.textContent = safeText(item.name) || "Usuario";
+                const message = document.createElement("p");
+        message.textContent = safeText(item.comment);
+        const approve = document.createElement("button");
+        approve.className = "btn primary";
+        approve.type = "button";
+        approve.textContent = "Aprobar";
+        approve.addEventListener("click", async () => {
+          approve.disabled = true;
+          try {
+            await updateDoc(doc(db, "comments", docSnap.id), { status: "approved" });
+          } catch (error) {
+            approve.disabled = false;
+            alert("No se pudo aprobar el comentario. Revisa las reglas de Firestore.");
+            console.error(error);
+          }
+        });
+        const reject = document.createElement("button");
+        reject.className = "btn secondary";
+        reject.type = "button";
+        reject.textContent = "Rechazar";
+        reject.addEventListener("click", async () => {
+          reject.disabled = true;
+          try {
+            await updateDoc(doc(db, "comments", docSnap.id), { status: "rejected" });
+          } catch (error) {
+            reject.disabled = false;
+            alert("No se pudo rechazar el comentario. Revisa las reglas de Firestore.");
+            console.error(error);
+          }
+        });
+        card.append(author, message, approve, reject);
+        pendingComments.appendChild(card);
+      });
+    }
+
+    onAuthStateChanged(auth, async user => {
+      if (stopApprovedListener) stopApprovedListener();
+      if (stopPendingListener) stopPendingListener();
+
+      signInButton.hidden = !!user;
+      signOutButton.hidden = !user;
+      signedInUser.textContent = user ? "Sesión: " + (user.displayName || user.email) : "";
+      authMessage.textContent = user
+        ? "Ya iniciaste sesión. Puedes enviar tu comentario."
+        : "Inicia sesión con Google para publicar comentarios.";
+
+      const isAdmin = !!user && !!user.email &&
+        user.email.toLowerCase() === ADMIN_EMAIL &&
+        !ADMIN_EMAIL.startsWith("reemplaza_");
+      adminPanel.hidden = !isAdmin;
+
+      if (isAdmin) {
+        const pendingQuery = query(collection(db, "comments"), where("status", "==", "pending"));
+        stopPendingListener = onSnapshot(pendingQuery, showPendingComments, error => {
+          pendingComments.textContent = "No se pudieron cargar los comentarios pendientes. Revisa las reglas de Firestore.";
+          console.error(error);
+        });
+      }
+
+      const approvedQuery = query(collection(db, "comments"), where("status", "==", "approved"));
+      stopApprovedListener = onSnapshot(approvedQuery, showApprovedComments, error => {
+        commentList.innerHTML = "<h3>Comentarios aprobados</h3><p class='smallprint'>No se pudieron cargar los comentarios. Revisa la configuración de Firestore.</p>";
+        console.error(error);
+      });
+    });
+
+    commentForm.addEventListener("submit", async event => {
+      event.preventDefault();
+      const user = auth.currentUser;
+      const nameInput = document.getElementById("commentName").value.trim();
+      const comment = document.getElementById("commentText").value.trim();
+      if (!user) {
+        commentStatus.textContent = "Primero inicia sesión con Google para enviar tu comentario.";
+        return;
+      }
+      if (!comment) {
+        commentStatus.textContent = "Escribe un comentario antes de enviarlo.";
+        return;
+      }
+      try {
+        await addDoc(collection(db, "comments"), {
+          uid: user.uid,
+          name: nameInput || user.displayName || "Usuario",
+          comment,
+          status: "pending",
+          createdAt: serverTimestamp()
+        });
+        commentForm.reset();
+        commentStatus.textContent = "¡Gracias! Tu comentario fue enviado y espera la aprobación del administrador.";
+      } catch (error) {
+        commentStatus.textContent = "No se pudo enviar. Revisa la configuración de Firestore.";
+        console.error(error);
+      }
+    });
+
     document.getElementById('quizForm').addEventListener('submit', event => {
       event.preventDefault();
       const answers = {q1:'b', q2:'a', q3:'c', q4:'b'};
@@ -454,232 +631,6 @@
       }
     });
   </script>
-
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import {
-      getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-    import {
-      getFirestore, collection, addDoc, query, where, onSnapshot,
-      serverTimestamp, updateDoc, deleteDoc, doc
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-    // Configuración del proyecto Firebase Juventud Informada.
-    const firebaseConfig = {
-      apiKey: "AIzaSyD3VTzjj-ar-jVxeIPefuEcOIsI_PoMRM6s",
-      authDomain: "juventud-informada-ushkas.firebaseapp.com",
-      projectId: "juventud-informada-ushkas",
-      storageBucket: "juventud-informada-ushkas.firebasestorage.app",
-      messagingSenderId: "902479218251",
-      appId: "1:902479218251:web:2768b981e375afbfeeefce",
-      measurementId: "G-535ZHE8MT2"
-    };
-
-    const ADMIN_EMAIL = "angeljhoelhuaman17@gmail.com";
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-    const provider = new GoogleAuthProvider();
-
-    const loginBtn = document.getElementById("googleLoginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-    const userStatus = document.getElementById("userStatus");
-    const userHint = document.getElementById("userHint");
-    const commentForm = document.getElementById("commentForm");
-    const commentName = document.getElementById("commentName");
-    const commentText = document.getElementById("commentText");
-    const commentsMessage = document.getElementById("commentsMessage");
-    const approvedComments = document.getElementById("approvedComments");
-    const adminPanel = document.getElementById("adminPanel");
-    const pendingComments = document.getElementById("pendingComments");
-
-    let stopApprovedListener = null;
-    let stopPendingListener = null;
-    let currentUser = null;
-
-    function showMessage(message) {
-      commentsMessage.textContent = message;
-    }
-
-    function safeDate(value) {
-      if (!value || typeof value.toDate !== "function") return "Fecha no disponible";
-      return value.toDate().toLocaleString("es-PE", { dateStyle: "medium", timeStyle: "short" });
-    }
-
-    function renderComments(container, docs, adminMode = false) {
-      container.replaceChildren();
-      if (!docs.length) {
-        const empty = document.createElement("p");
-        empty.className = "smallprint";
-        empty.textContent = adminMode ? "No hay comentarios pendientes." : "Todavía no hay comentarios aprobados.";
-        container.append(empty);
-        return;
-      }
-
-      docs.sort((a, b) => {
-        const ta = a.data().createdAt?.toMillis?.() ?? 0;
-        const tb = b.data().createdAt?.toMillis?.() ?? 0;
-        return tb - ta;
-      });
-
-      docs.forEach((item) => {
-        const data = item.data();
-        const card = document.createElement("article");
-        card.className = "comment-item";
-
-        const title = document.createElement("h3");
-        title.textContent = data.name || "Visitante";
-        const body = document.createElement("p");
-        body.textContent = data.message || "";
-        const date = document.createElement("div");
-        date.className = "comment-date";
-        date.textContent = safeDate(data.createdAt);
-        card.append(title, body, date);
-
-        if (adminMode) {
-          const actions = document.createElement("div");
-          actions.className = "admin-actions";
-
-          const approve = document.createElement("button");
-          approve.className = "btn-small btn-approve";
-          approve.type = "button";
-          approve.textContent = "Aprobar";
-          approve.addEventListener("click", async () => {
-            try {
-              await updateDoc(doc(db, "comments", item.id), { status: "approved" });
-            } catch (error) {
-              showMessage("No se pudo aprobar. Revisa las reglas de seguridad de Firestore.");
-            }
-          });
-
-          const reject = document.createElement("button");
-          reject.className = "btn-small btn-reject";
-          reject.type = "button";
-          reject.textContent = "Rechazar";
-          reject.addEventListener("click", async () => {
-            try {
-              await updateDoc(doc(db, "comments", item.id), { status: "rejected" });
-            } catch (error) {
-              showMessage("No se pudo rechazar. Revisa las reglas de seguridad de Firestore.");
-            }
-          });
-
-          const remove = document.createElement("button");
-          remove.className = "btn-small btn-delete";
-          remove.type = "button";
-          remove.textContent = "Eliminar";
-          remove.addEventListener("click", async () => {
-            if (!confirm("¿Seguro que deseas eliminar este comentario?")) return;
-            try {
-              await deleteDoc(doc(db, "comments", item.id));
-            } catch (error) {
-              showMessage("No se pudo eliminar. Revisa las reglas de seguridad de Firestore.");
-            }
-          });
-
-          actions.append(approve, reject, remove);
-          card.append(actions);
-        }
-        container.append(card);
-      });
-    }
-
-    const approvedQuery = query(collection(db, "comments"), where("status", "==", "approved"));
-    stopApprovedListener = onSnapshot(approvedQuery, (snapshot) => {
-      renderComments(approvedComments, snapshot.docs, false);
-    }, () => {
-      approvedComments.textContent = "No se pudieron cargar los comentarios. Verifica las reglas de Firestore.";
-    });
-
-    loginBtn.addEventListener("click", async () => {
-      try {
-        await signInWithPopup(auth, provider);
-      } catch (error) {
-        showMessage("No se pudo iniciar sesión. Comprueba que Google esté habilitado en Firebase y que el dominio esté autorizado.");
-      }
-    });
-
-    logoutBtn.addEventListener("click", async () => {
-      try {
-        await signOut(auth);
-      } catch (error) {
-        showMessage("No se pudo cerrar la sesión. Inténtalo nuevamente.");
-      }
-    });
-
-    commentForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      if (!currentUser) {
-        showMessage("Primero inicia sesión con Google.");
-        return;
-      }
-
-      const name = commentName.value.trim();
-      const message = commentText.value.trim();
-      if (name.length < 1 || name.length > 40 || message.length < 3 || message.length > 500) {
-        showMessage("Revisa tu nombre y comentario. El comentario debe tener entre 3 y 500 caracteres.");
-        return;
-      }
-
-      try {
-        await addDoc(collection(db, "comments"), {
-          name,
-          message,
-          uid: currentUser.uid,
-          status: "pending",
-          createdAt: serverTimestamp()
-        });
-        commentForm.reset();
-        showMessage("¡Comentario enviado! Se mostrará cuando el administrador lo apruebe.");
-      } catch (error) {
-        showMessage("No se pudo enviar. Revisa tu conexión y las reglas de seguridad de Firestore.");
-      }
-    });
-
-    onAuthStateChanged(auth, (user) => {
-      currentUser = user;
-      const signedIn = Boolean(user);
-      loginBtn.classList.toggle("hidden", signedIn);
-      logoutBtn.classList.toggle("hidden", !signedIn);
-      commentForm.classList.toggle("hidden", !signedIn);
-
-      if (!signedIn) {
-        userStatus.textContent = "No has iniciado sesión";
-        userHint.textContent = "Inicia sesión con Google para escribir un comentario.";
-        adminPanel.classList.add("hidden");
-        if (stopPendingListener) {
-          stopPendingListener();
-          stopPendingListener = null;
-        }
-        return;
-      }
-
-      userStatus.textContent = `Sesión iniciada: ${user.displayName || user.email}`;
-      userHint.textContent = "Tu comentario será revisado antes de publicarse.";
-      commentName.value = user.displayName || "";
-
-      const isAdmin = user.email === ADMIN_EMAIL && user.emailVerified;
-      if (isAdmin) {
-        adminPanel.classList.remove("hidden");
-        if (stopPendingListener) stopPendingListener();
-        const pendingQuery = query(collection(db, "comments"), where("status", "==", "pending"));
-        stopPendingListener = onSnapshot(pendingQuery, (snapshot) => {
-          renderComments(pendingComments, snapshot.docs, true);
-        }, () => {
-          pendingComments.textContent = "No se pudieron cargar los pendientes. Verifica las reglas de Firestore.";
-        });
-      } else {
-        adminPanel.classList.add("hidden");
-        if (stopPendingListener) {
-          stopPendingListener();
-          stopPendingListener = null;
-        }
-      }
-    });
-  </script>
-
 </body>
 </html>
