@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -93,6 +94,22 @@
     footer{background:#511724;color:#fbeee7;text-align:center;padding:27px 20px;font-size:13px}
     footer a{color:#ffe0d2}
     .smallprint{font-size:12px;color:#786a6e}
+    .feedback{max-width:850px;margin:auto;background:white;border:1px solid #8f24321a;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+    .feedback label{display:block;font-weight:750;color:var(--wine-dark);margin:12px 0 6px}
+    .feedback input,.feedback textarea{width:100%;padding:12px;border:1px solid #d9c5c5;border-radius:11px;font:inherit;background:#fffdfb;color:var(--ink)}
+    .feedback textarea{min-height:110px;resize:vertical}
+    .feedback input:focus,.feedback textarea:focus{outline:2px solid #b43a46;outline-offset:2px}
+    .comment-list{margin-top:24px;display:grid;gap:12px}
+    .comment-item{background:#fff7f3;border-left:4px solid var(--wine);padding:14px 16px;border-radius:10px}
+    .comment-item strong{color:var(--wine-dark)}
+    .comment-item p{margin:6px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
+    .auth-panel{max-width:850px;margin:0 auto 18px;background:#fff;border:1px solid #8f24321a;border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    .auth-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .google-btn{border:1px solid #d7caca;background:#fff;color:#30252a;border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer}
+    .google-btn:hover{background:#fff7f3}
+    .admin-panel{max-width:850px;margin:18px auto 0;background:#fff;border:2px solid #8f2432;border-radius:18px;padding:20px}
+    .admin-comment{padding:14px;border:1px solid #eadbd7;border-radius:12px;margin:10px 0}
+    .admin-comment button{margin:8px 8px 0 0}
     @media(max-width:800px){
       .navwrap{align-items:flex-start}.menu-btn{display:block}
       nav{display:none;position:absolute;left:0;right:0;top:65px;background:var(--wine-dark);padding:16px 22px;flex-direction:column;align-items:flex-start}
@@ -131,11 +148,11 @@
       </div>
       <nav id="mainNav">
         <a href="#inicio">Inicio</a><a href="#informate">Infórmate</a><a href="#chicosychicas">Para ambos</a>
-        <a href="#prevencion">Prevención</a><a href="#preguntas">Preguntas</a><a href="#orientacion">Orientación</a>
+        <a href="#prevencion">Prevención</a><a href="#preguntas">Preguntas</a><a href="#orientacion">Orientación</a><a href="#comentarios">Comentarios</a>
       </nav>
     </div>
   </header>
-
+  
   <main>
     <section class="hero" id="inicio">
       <div class="hero-inner">
@@ -148,7 +165,7 @@
             <a class="btn secondary" href="#orientacion">Necesito orientación</a>
           </div>
         </div>
-        <div class="hero-art" role="img" aria-label="Ilustración simbólica de dos adolescentes reflexionando sobre su futuro">
+        <div class="hero-art" role="img" aria-label="Ilustración de dos adolescentes">
           <div class="people"><div class="person boy"></div><div class="person"></div></div>
           <div class="hero-note">La responsabilidad, el respeto y la prevención son de todas las personas.</div>
         </div>
@@ -159,10 +176,10 @@
       <div class="section-head">
         <span class="eyebrow">01 · Conocer es prevenir</span>
         <h2>¿Qué es el embarazo en la adolescencia?</h2>
-        <p>Es el embarazo que ocurre en una persona durante la etapa adolescente. Puede influir en su salud, sus estudios, sus relaciones y sus planes de vida. Cada situación necesita información y apoyo, nunca burlas ni discriminación.</p>
+        <p>Es el embarazo que ocurre durante la etapa adolescente. Puede influir en la salud, los estudios, las relaciones y los planes de vida. Cada situación necesita información y apoyo, nunca burlas ni discriminación.</p>
       </div>
       <div class="grid">
-        <article class="card"><div class="icon">📚</div><h3>Educación</h3><p>Contar con información clara ayuda a reconocer riesgos, resolver dudas y tomar decisiones conscientes.</p></article>
+        <article class="card"><div class="icon">📚</div><h3>Educación</h3><p>La información clara ayuda a reconocer riesgos, resolver dudas y tomar decisiones conscientes.</p></article>
         <article class="card"><div class="icon">🤝</div><h3>Responsabilidad compartida</h3><p>La prevención no es tarea de una sola persona. Los chicos también deben informarse, cuidarse y respetar.</p></article>
         <article class="card"><div class="icon">🌱</div><h3>Proyecto de vida</h3><p>Los adolescentes tienen derecho a estudiar, crecer, plantearse metas y recibir apoyo para alcanzarlas.</p></article>
       </div>
@@ -179,7 +196,7 @@
           <h3>👦 Para los varones</h3>
           <ul class="checklist">
             <li>Infórmate sobre prevención del embarazo y las ITS.</li>
-            <li>Participa activamente en el cuidado y no dejes toda la responsabilidad a tu pareja.</li>
+            <li>Participa activamente en el cuidado.</li>
             <li>Respeta los límites y decisiones de la otra persona.</li>
             <li>No presiones, manipules ni difundas información privada.</li>
             <li>Busca orientación en un servicio de salud si tienes dudas.</li>
@@ -188,15 +205,15 @@
         <article class="panel">
           <h3>👧 Para las mujeres</h3>
           <ul class="checklist">
-            <li>Conoce tus derechos y busca información confiable sobre tu salud.</li>
+            <li>Conoce tus derechos y busca información confiable.</li>
             <li>Puedes decir que no; nadie debe presionarte.</li>
             <li>Consulta con personal de salud sobre métodos anticonceptivos.</li>
-            <li>Pregunta y expresa tus dudas sin sentir vergüenza.</li>
+            <li>Pregunta y expresa tus dudas sin vergüenza.</li>
             <li>Busca apoyo de una persona adulta de confianza o profesional.</li>
           </ul>
         </article>
       </div>
-      <p class="smallprint" style="text-align:center;margin-top:18px">Estas orientaciones son útiles para todas las personas, independientemente de su género.</p>
+      <p class="smallprint" style="text-align:center">Estas orientaciones son útiles para todas las personas, independientemente de su género.</p>
     </section>
 
     <section class="section" id="prevencion">
@@ -206,12 +223,12 @@
         <p>La decisión de tener o no relaciones sexuales debe ser libre, informada y sin presiones. No tener relaciones sexuales también es una decisión válida.</p>
       </div>
       <div class="method-grid">
-        <article class="method"><span class="tag">Doble protección</span><h3>Preservativo o condón</h3><p>Usado correctamente en cada relación sexual, ayuda a prevenir el embarazo y reduce el riesgo de infecciones de transmisión sexual (ITS), incluido el VIH.</p></article>
-        <article class="method"><span class="tag">Otros métodos</span><h3>Pastillas, implante e DIU</h3><p>Existen métodos hormonales y dispositivos intrauterinos. Un profesional de salud puede explicar su uso, beneficios, posibles efectos y cuál se adapta a cada persona.</p></article>
-        <article class="method"><span class="tag">Información importante</span><h3>Anticoncepción de emergencia</h3><p>Puede ayudar a prevenir un embarazo después de una relación sexual sin protección o ante un fallo del método. Se debe buscar orientación de salud cuanto antes.</p></article>
-        <article class="method"><span class="tag">Recuerda</span><h3>Ningún método se elige por presión</h3><p>La elección debe ser informada y voluntaria. No uses remedios caseros ni consejos de redes sociales para evitar un embarazo.</p></article>
+        <article class="method"><span class="tag">Doble protección</span><h3>Preservativo o condón</h3><p>Usado correctamente, ayuda a prevenir el embarazo y reduce el riesgo de ITS, incluido el VIH.</p></article>
+        <article class="method"><span class="tag">Otros métodos</span><h3>Pastillas, implante y DIU</h3><p>Existen métodos hormonales y dispositivos intrauterinos. Un profesional de salud puede explicar sus beneficios y posibles efectos.</p></article>
+        <article class="method"><span class="tag">Información importante</span><h3>Anticoncepción de emergencia</h3><p>Puede ayudar a prevenir un embarazo después de una relación sin protección o ante un fallo del método. Busca orientación de salud cuanto antes.</p></article>
+        <article class="method"><span class="tag">Recuerda</span><h3>Decisiones informadas</h3><p>La elección debe ser voluntaria. No uses remedios caseros ni consejos de redes sociales para evitar un embarazo.</p></article>
       </div>
-      <div class="notice" style="margin-top:20px"><strong>Importante:</strong> Los métodos anticonceptivos no protegen todos de las ITS. El preservativo es el método que ayuda a reducir tanto el riesgo de embarazo como el de muchas ITS. Para elegir un método, consulta a un profesional de salud.</div>
+      <div class="notice" style="margin-top:20px"><strong>Importante:</strong> No todos los métodos anticonceptivos protegen de las ITS. El preservativo ayuda a reducir tanto el riesgo de embarazo como el de muchas ITS.</div>
     </section>
 
     <section class="section soft">
@@ -223,7 +240,7 @@
       <div class="grid">
         <article class="card"><div class="icon">💬</div><h3>Hablar</h3><p>Conversar sobre límites, dudas y prevención sin burlas ni amenazas.</p></article>
         <article class="card"><div class="icon">🛑</div><h3>Respetar el “no”</h3><p>Nadie debe insistir, chantajear o presionar para obtener una respuesta.</p></article>
-        <article class="card"><div class="icon">🧡</div><h3>Buscar apoyo</h3><p>Si hay presión, miedo o una situación que te incomoda, habla con una persona adulta de confianza o un profesional.</p></article>
+        <article class="card"><div class="icon">🧡</div><h3>Buscar apoyo</h3><p>Si hay presión o una situación incómoda, habla con una persona adulta de confianza o un profesional.</p></article>
       </div>
     </section>
 
@@ -234,11 +251,11 @@
         <p>Abre cada pregunta para leer una respuesta breve.</p>
       </div>
       <div class="accordion">
-        <details><summary>¿La prevención es responsabilidad solo de la mujer?</summary><p>No. La prevención es responsabilidad compartida. Los varones también deben informarse, participar en el cuidado, respetar los límites y asumir las consecuencias de sus decisiones.</p></details>
-        <details><summary>¿El condón también ayuda a prevenir infecciones?</summary><p>Sí. El uso correcto y constante del preservativo reduce el riesgo de embarazo y de muchas infecciones de transmisión sexual, incluido el VIH. No elimina por completo todos los riesgos.</p></details>
-        <details><summary>¿Puedo pedir orientación si soy adolescente?</summary><p>Sí. En Perú, el Ministerio de Salud informa que adolescentes pueden recibir consejería sobre salud sexual y reproductiva y orientación sobre métodos anticonceptivos en establecimientos de salud.</p></details>
-        <details><summary>¿Qué hago si creo que podría haber un embarazo?</summary><p>No enfrentes la preocupación a solas ni te guíes por rumores. Acude a un establecimiento de salud para recibir orientación y preguntar por una prueba de embarazo. Si puedes, busca apoyo de una persona adulta de confianza.</p></details>
-        <details><summary>¿Y si mi pareja me presiona?</summary><p>Tienes derecho a decir que no. El consentimiento debe ser libre y puede retirarse en cualquier momento. Si no te sientes seguro o segura, busca ayuda de una persona adulta de confianza o de un servicio profesional.</p></details>
+        <details><summary>¿La prevención es responsabilidad solo de la mujer?</summary><p>No. La prevención es responsabilidad compartida. Los varones también deben informarse, participar en el cuidado y respetar los límites.</p></details>
+        <details><summary>¿El condón también ayuda a prevenir infecciones?</summary><p>Sí. El uso correcto y constante del preservativo reduce el riesgo de embarazo y de muchas ITS, incluido el VIH. No elimina por completo todos los riesgos.</p></details>
+        <details><summary>¿Puedo pedir orientación si soy adolescente?</summary><p>Sí. En Perú, los adolescentes pueden recibir consejería sobre salud sexual y reproductiva y orientación en establecimientos de salud.</p></details>
+        <details><summary>¿Qué hago si creo que podría haber un embarazo?</summary><p>No enfrentes la preocupación a solas ni te guíes por rumores. Acude a un establecimiento de salud para recibir orientación.</p></details>
+        <details><summary>¿Y si mi pareja me presiona?</summary><p>Tienes derecho a decir que no. El consentimiento debe ser libre y puede retirarse en cualquier momento. Busca ayuda de una persona adulta de confianza o un servicio profesional.</p></details>
       </div>
     </section>
 
@@ -246,49 +263,45 @@
       <div class="section-head">
         <span class="eyebrow">06 · Comprueba lo aprendido</span>
         <h2>Mini cuestionario</h2>
-        <p>Responde estas preguntas para repasar. No se guardan tus respuestas.</p>
+        <p>Responde estas preguntas para repasar. Tus respuestas no se guardan.</p>
       </div>
       <form class="quiz" id="quizForm">
-        <div class="question">
-          <strong>1. ¿Quiénes comparten la responsabilidad de prevenir un embarazo?</strong>
+        <div class="question"><strong>1. ¿Quiénes comparten la responsabilidad de prevenir un embarazo?</strong>
           <label><input type="radio" name="q1" value="a"> Solo la mujer</label>
           <label><input type="radio" name="q1" value="b"> Ambas personas</label>
           <label><input type="radio" name="q1" value="c"> Solo el varón</label>
         </div>
-        <div class="question">
-          <strong>2. ¿Qué método ayuda a prevenir el embarazo y reduce el riesgo de ITS?</strong>
+        <div class="question"><strong>2. ¿Qué método ayuda a prevenir el embarazo y reduce el riesgo de ITS?</strong>
           <label><input type="radio" name="q2" value="a"> El preservativo</label>
           <label><input type="radio" name="q2" value="b"> Un remedio casero</label>
           <label><input type="radio" name="q2" value="c"> Ninguno</label>
         </div>
-        <div class="question">
-          <strong>3. ¿Qué debes hacer si tienes dudas sobre anticoncepción?</strong>
+        <div class="question"><strong>3. ¿Qué debes hacer si tienes dudas sobre anticoncepción?</strong>
           <label><input type="radio" name="q3" value="a"> Seguir cualquier consejo de redes</label>
           <label><input type="radio" name="q3" value="b"> Evitar preguntar</label>
           <label><input type="radio" name="q3" value="c"> Consultar a un profesional de salud</label>
         </div>
-        <div class="question">
-          <strong>4. ¿Qué significa el consentimiento?</strong>
-          <label><input type="radio" name="q4" value="a"> Aceptar por miedo a perder a alguien</label>
+        <div class="question"><strong>4. ¿Qué significa el consentimiento?</strong>
+          <label><input type="radio" name="q4" value="a"> Aceptar por miedo</label>
           <label><input type="radio" name="q4" value="b"> Decidir libremente, sin presión</label>
           <label><input type="radio" name="q4" value="c"> No poder cambiar de opinión</label>
         </div>
         <button class="btn primary" type="submit">Ver mis resultados</button>
-        <div class="quiz-result" id="quizResult" role="status" aria-live="polite"></div>
+        <div class="quiz-result" id="quizResult" role="status"></div>
       </form>
     </section>
 
     <section class="section help" id="orientacion">
       <div class="section-head">
-        <span class="eyebrow" style="background:#ffffff20;color:white;border-color:#ffffff55">07 · No estás solo/a</span>
+        <span class="eyebrow">07 · No estás solo/a</span>
         <h2>¿Necesitas orientación?</h2>
-        <p>Puedes hacer preguntas y recibir información profesional, gratuita y confidencial en los servicios del Ministerio de Salud del Perú.</p>
+        <p>Puedes recibir información profesional en los servicios del Ministerio de Salud del Perú.</p>
       </div>
       <div class="helpbox">
         <div>
           <h3>Ministerio de Salud – Línea 113</h3>
           <div class="phone">113 · opción 3</div>
-          <p>Orientación en salud sexual y reproductiva. Atención telefónica gratuita, las 24 horas, todos los días.</p>
+          <p>Orientación en salud sexual y reproductiva. Atención gratuita, las 24 horas.</p>
           <a href="https://www.gob.pe/74520-prevencion-del-embarazo-en-la-adolescencia" target="_blank" rel="noopener">Información oficial sobre prevención ↗</a>
         </div>
         <div>
@@ -300,90 +313,347 @@
         <div style="grid-column:1/-1;border-top:1px solid #eadbd7;padding-top:18px">
           <h3>🌐 Aldeas Infantiles SOS Perú – Programa Cusco</h3>
           <p>Si necesitas orientación o deseas conocer sus programas, consulta sus canales institucionales oficiales.</p>
-          <p><strong>Dirección:</strong> Prolongación Av. Grau N.º 24, Huancaro, distrito de Santiago, Cusco.</p>
-          <p><strong>Teléfono institucional publicado:</strong> 984 766 975</p>
-          <p><strong>Correo:</strong> <a href="mailto:ai.cusco@aldeasinfantiles.org.pe">ai.cusco@aldeasinfantiles.org.pe</a></p>
-          <p><a href="https://www.aldeasinfantiles.org.pe/quienes-somos/donde-estamos/cusco" target="_blank" rel="noopener">Visitar la página oficial del Programa Cusco ↗</a></p>
-          <p class="smallprint">Estos datos corresponden a los canales publicados por la organización. Confirma la atención y los servicios disponibles directamente con Aldeas Infantiles SOS Perú.</p>
+          <a href="https://www.aldeasinfantiles.org.pe/quienes-somos/donde-estamos/cusco" target="_blank" rel="noopener">Visitar la página oficial del Programa Cusco ↗</a>
         </div>
       </div>
     </section>
-
-    <section class="section">
+    
+    <section class="section" id="comentarios">
       <div class="section-head">
-        <span class="eyebrow">Un mensaje para recordar</span>
-        <h2>Infórmate, decide y construye tu futuro.</h2>
-        <p>Tu salud importa. Tus decisiones merecen respeto. Tus sueños también cuentan.</p>
+        <span class="eyebrow">08 · Tu opinión cuenta</span>
+        <h2>Comentarios de la comunidad</h2>
+        <p>Comparte una opinión o reflexión con respeto. Los comentarios aparecerán públicamente después de ser revisados.</p>
+      </div>
+
+      <div class="comments-layout">
+        <form id="commentForm" class="panel">
+          <h3>Escribe tu comentario</h3>
+          <label for="commentName">Tu nombre</label>
+          <input id="commentName" type="text" maxlength="40" placeholder="Escribe tu nombre" required>
+          <label for="commentText">Tu comentario</label>
+          <textarea id="commentText" maxlength="500" rows="4" placeholder="Comparte tu opinión..." required></textarea>
+          <button class="btn primary" type="submit" id="sendComment">Enviar comentario</button>
+          <p id="commentMessage" class="smallprint" role="status">Para comentar, inicia sesión con Google.</p>
+        </form>
+
+        <div class="panel">
+          <h3>Comentarios publicados</h3>
+          <div id="commentsList">
+            <p>Cargando comentarios...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel admin-panel" id="adminPanel" style="display:none;margin-top:24px">
+        <h3>🔐 Panel de administración</h3>
+        <p>Desde aquí puedes revisar los comentarios pendientes y decidir cuáles publicar.</p>
+        <div id="pendingComments">
+          <p>No hay comentarios pendientes.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <strong>JUVENTUD INFORMADA</strong><br>
-    Una iniciativa educativa para promover información, respeto y prevención.<br><br>
-    <span>Fuentes para ampliar: <a href="https://www.gob.pe/74520-prevencion-del-embarazo-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Prevención</a> ·
-    <a href="https://www.gob.pe/15121-derechos-sexuales-y-reproductivos-en-la-anticoncepcion-en-la-adolescencia" target="_blank" rel="noopener">MINSA – Derechos</a> ·
-    <a href="https://www.who.int/es/news-room/fact-sheets/detail/adolescent-pregnancy" target="_blank" rel="noopener">OMS – Embarazo adolescente</a></span>
-    <p class="smallprint" style="color:#f2d8d2">Contenido educativo; no reemplaza la atención ni el consejo personalizado de un profesional de salud.</p>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Juventud Informada</h3>
+        <p>Información para decidir con responsabilidad y construir un mejor futuro.</p>
+      </div>
+      <div>
+        <p>© 2026 Juventud Informada</p>
+        <p>Proyecto educativo de prevención y orientación.</p>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    // El contenido original está en español. La traducción automática requiere internet.
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'es',
-        includedLanguages: 'es,en',
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <button id="loginButton" class="login-button" type="button">Iniciar sesión con Google</button>
+  <button id="logoutButton" class="login-button" type="button" style="display:none">Cerrar sesión</button>
+  <div id="userStatus" class="user-status" aria-live="polite"></div>
 
-    const languageSelect = document.getElementById('languageSelect');
-    languageSelect.addEventListener('change', () => {
-      const target = languageSelect.value;
-      const trySelectLanguage = () => {
-        const combo = document.querySelector('.goog-te-combo');
-        if (combo) {
-          combo.value = target;
-          combo.dispatchEvent(new Event('change'));
-        } else {
-          setTimeout(trySelectLanguage, 350);
-        }
-      };
-      trySelectLanguage();
-    });
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import {
+      getFirestore,
+      collection,
+      addDoc,
+      getDocs,
+      query,
+      where,
+      orderBy,
+      serverTimestamp,
+      doc,
+      updateDoc,
+      deleteDoc
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-    const menuBtn = document.getElementById('menuBtn');
-    const mainNav = document.getElementById('mainNav');
-    menuBtn.addEventListener('click', () => {
-      const open = mainNav.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }));
+    // Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyD3VTjzzar-jVxeIPefuEcOIsP_IoMRM6s",
+      authDomain: "juventud-informada-ushkas.firebaseapp.com",
+      projectId: "juventud-informada-ushkas",
+      storageBucket: "juventud-informada-ushkas.firebasestorage.app",
+      messagingSenderId: "902479218251",
+      appId: "1:902479218251:web:5904df550bae2878eeefce",
+      measurementId: "G-KLQ4PMT1KF"
+    };
 
-    document.getElementById('quizForm').addEventListener('submit', event => {
-      event.preventDefault();
-      const answers = {q1:'b', q2:'a', q3:'c', q4:'b'};
-      let score = 0;
-      let answered = 0;
-      Object.entries(answers).forEach(([question, correct]) => {
-        const chosen = document.querySelector(`input[name="${question}"]:checked`);
-        if (chosen) {
-          answered++;
-          if (chosen.value === correct) score++;
-        }
-      });
-      const result = document.getElementById('quizResult');
-      result.style.display = 'block';
-      if (answered < 4) {
-        result.textContent = `Has respondido ${answered} de 4 preguntas. Completa las que faltan para ver tu resultado.`;
-      } else {
-        result.textContent = `¡Obtuviste ${score} de 4 respuestas correctas! ${score === 4 ? '¡Excelente! Sigue compartiendo información confiable.' : 'Repasa las secciones y vuelve a intentarlo. ¡Aprender también es avanzar!'}`;
+    // Reemplaza este texto por el correo de tu cuenta Google.
+    const ADMIN_EMAIL = "REEMPLAZA_CON_TU_CORREO_GOOGLE";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+
+    const loginButton = document.getElementById("loginButton");
+    const logoutButton = document.getElementById("logoutButton");
+    const userStatus = document.getElementById("userStatus");
+    const commentForm = document.getElementById("commentForm");
+    const commentMessage = document.getElementById("commentMessage");
+    const commentsList = document.getElementById("commentsList");
+    const adminPanel = document.getElementById("adminPanel");
+    const pendingComments = document.getElementById("pendingComments");
+
+    let currentUser = null;
+
+    loginButton.addEventListener("click", async () => {
+      try {
+        await signInWithPopup(auth, provider);
+      } catch (error) {
+        console.error(error);
+        userStatus.textContent = "No se pudo iniciar sesión. Inténtalo nuevamente.";
       }
     });
+
+    logoutButton.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+      } catch (error) {
+        console.error(error);
+        userStatus.textContent = "No se pudo cerrar sesión.";
+      }
+    });
+
+    onAuthStateChanged(auth, async (user) => {
+      currentUser = user;
+
+      if (user) {
+        userStatus.textContent = "Sesión iniciada: " + user.displayName;
+        loginButton.style.display = "none";
+        logoutButton.style.display = "inline-block";
+      } else {
+        userStatus.textContent = "No has iniciado sesión.";
+        loginButton.style.display = "inline-block";
+        logoutButton.style.display = "none";
+      }
+
+      const isAdmin = Boolean(
+        user &&
+        ADMIN_EMAIL !== "REEMPLAZA_CON_TU_CORREO_GOOGLE" &&
+        user.email &&
+        user.email.toLowerCase() === ADMIN_EMAIL.toLowerCase()
+      );
+
+      adminPanel.style.display = isAdmin ? "block" : "none";
+
+      await loadApprovedComments();
+
+      if (isAdmin) {
+        await loadPendingComments();
+      }
+    });
+
+    commentForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!currentUser) {
+        commentMessage.textContent = "Primero inicia sesión con Google.";
+        return;
+      }
+
+      const name = document.getElementById("commentName").value.trim();
+      const message = document.getElementById("commentText").value.trim();
+
+      if (!name || !message) {
+        commentMessage.textContent = "Completa todos los campos.";
+        return;
+      }
+
+      const sendButton = document.getElementById("sendComment");
+      sendButton.disabled = true;
+
+      try {
+        await addDoc(collection(db, "comments"), {
+          name,
+          message,
+          uid: currentUser.uid,
+          status: "pending",
+          createdAt: serverTimestamp()
+        });
+
+        commentForm.reset();
+        commentMessage.textContent = "¡Comentario enviado! Será revisado antes de publicarse.";
+      } catch (error) {
+        console.error(error);
+        commentMessage.textContent = "No se pudo enviar. Revisa la configuración de Firebase.";
+      } finally {
+        sendButton.disabled = false;
+      }
+    });
+
+    async function loadApprovedComments() {
+      commentsList.innerHTML = "<p>Cargando comentarios...</p>";
+
+      try {
+        const commentsQuery = query(
+          collection(db, "comments"),
+          where("status", "==", "approved")
+        );
+
+        const snapshot = await getDocs(commentsQuery);
+
+        commentsList.innerHTML = "";
+
+        if (snapshot.empty) {
+          commentsList.innerHTML = "<p>Aún no hay comentarios publicados.</p>";
+          return;
+        }
+
+        snapshot.forEach((item) => {
+          const data = item.data();
+
+          const article = document.createElement("article");
+          article.className = "comment-item";
+
+          const author = document.createElement("strong");
+          author.textContent = data.name || "Usuario";
+
+          const message = document.createElement("p");
+          message.textContent = data.message || "";
+
+          article.append(author, message);
+          commentsList.appendChild(article);
+        });
+      } catch (error) {
+        console.error(error);
+        commentsList.innerHTML = "<p>No se pudieron cargar los comentarios.</p>";
+      }
+    }
+
+    async function loadPendingComments() {
+      pendingComments.innerHTML = "<p>Cargando comentarios pendientes...</p>";
+
+      try {
+        const pendingQuery = query(
+          collection(db, "comments"),
+          where("status", "==", "pending")
+        );
+
+        const snapshot = await getDocs(pendingQuery);
+
+        pendingComments.innerHTML = "";
+
+        if (snapshot.empty) {
+          pendingComments.innerHTML = "<p>No hay comentarios pendientes.</p>";
+          return;
+        }
+
+        snapshot.forEach((item) => {
+          const data = item.data();
+
+          const article = document.createElement("article");
+          article.className = "comment-item";
+
+          const author = document.createElement("strong");
+          author.textContent = data.name || "Usuario";
+
+          const message = document.createElement("p");
+          message.textContent = data.message || "";
+
+          const approveButton = document.createElement("button");
+          approveButton.className = "btn primary";
+          approveButton.textContent = "Aprobar";
+
+          approveButton.addEventListener("click", async () => {
+            if (!currentUser || currentUser.email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) return;
+
+            try {
+              await updateDoc(doc(db, "comments", item.id), {
+                status: "approved"
+              });
+
+              await loadPendingComments();
+              await loadApprovedComments();
+            } catch (error) {
+              console.error(error);
+              alert("No se pudo aprobar el comentario.");
+            }
+          });
+
+          const rejectButton = document.createElement("button");
+          rejectButton.className = "btn secondary";
+          rejectButton.textContent = "Rechazar";
+
+          rejectButton.addEventListener("click", async () => {
+            if (!currentUser || currentUser.email.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) return;
+
+            try {
+              await deleteDoc(doc(db, "comments", item.id));
+              await loadPendingComments();
+            } catch (error) {
+              console.error(error);
+              alert("No se pudo eliminar el comentario.");
+            }
+          });
+
+          article.append(author, message, approveButton, rejectButton);
+          pendingComments.appendChild(article);
+        });
+      } catch (error) {
+        console.error(error);
+        pendingComments.innerHTML = "<p>No se pudieron cargar los comentarios pendientes.</p>";
+      }
+    }
+
+    // Cuestionario
+    const quizForm = document.getElementById("quizForm");
+
+    if (quizForm) {
+      quizForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const answers = {
+          q1: "b",
+          q2: "a",
+          q3: "c",
+          q4: "b"
+        };
+
+        let score = 0;
+
+        for (const question in answers) {
+          const selected = quizForm.querySelector(
+            'input[name="' + question + '"]:checked'
+          );
+
+          if (selected && selected.value === answers[question]) {
+            score++;
+          }
+        }
+
+        const result = document.getElementById("quizResult");
+        result.textContent = "Obtuviste " + score + " de 4 respuestas correctas. " +
+          (score === 4 ? "¡Excelente trabajo!" : "¡Sigue repasando, puedes mejorar!");
+      });
+    }
   </script>
-  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
